@@ -2,7 +2,12 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        main: () => <h2>Home</h2>,
+        id: 'default',
+    },
+    {
+        path: '/mortgage-calculator',
+        name: 'Mortgage Calculator',
+        id: 'mortgageCalculator',
     },
 ]
 

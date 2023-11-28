@@ -5,7 +5,7 @@ import routes from './routesConfig'
 
 export default function Sidebar() {
     return (
-        <>
+        <nav>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
                 {routes.map((route, index) => {
                     return (
@@ -15,6 +15,6 @@ export default function Sidebar() {
                     )
                 })}
             </ul>
-        </>
+        </nav>
     )
 }

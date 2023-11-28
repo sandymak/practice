@@ -1,21 +1,21 @@
 import './App.css'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Sidebar from './navigation/Sidebar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import MainPage from './common/MainPage'
+import routesConfig from './navigation/routesConfig'
 
 export default function App() {
     return (
-        <>
-            <header>Header</header>
-            <div className="columns">
-                <Router>
-                    <nav>
-                        <Sidebar />
-                    </nav>
-                    <main>Main</main>
-                    <aside>Sidebar</aside>
-                </Router>
-            </div>
-            <footer>Footer</footer>
-        </>
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<MainPage id="default" />} />
+                {routesConfig.map((route, index) => (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        element={<MainPage id={route.id} />}
+                    />
+                ))}
+            </Routes>
+        </Router>
     )
 }

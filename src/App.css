@@ -1,7 +1,6 @@
 body {
     font-family: sans-serif;
     font-size: 12px;
-    font-weight: bold;
     margin: 0;
     min-height: 100vh;
 }
@@ -28,6 +27,7 @@ footer {
 header {
     background-color: tomato;
     height: 60px;
+    font-weight: bold;
 }
 
 .columns {
@@ -38,21 +38,28 @@ header {
 nav {
     background-color: coral;
     flex-shrink: 0;
-    width: 100px;
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
 }
 
 main {
     background-color: moccasin;
     flex-grow: 1;
+    font-weight: normal;
 }
 
 aside {
     background-color: sandybrown;
-    flex-shrink: 0;
-    width: 100px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    text-align: left;
 }
 
 footer {
     background-color: slategray;
     height: 100px;
+    font-weight: bold;
 }
