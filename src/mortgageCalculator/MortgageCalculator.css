@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px grey solid;
+    padding: 8px 10px;
+}
+
+.mortgage-calculator-container {
+    text-align: left;
+    margin: 5px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+input select {
+    width: 100px;
+    margin: 5px;
+}
+.input-dollar {
+    position: relative;
+}
+
+.input-dollar.left {
+    padding-right: 2px;
+}
+
+.input-interest-rate {
+    position: relative;
+}
+
+.input-interest-rate.right {
+    padding-left: 2px;
+    text-align: end;
+}
