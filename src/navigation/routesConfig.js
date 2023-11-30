@@ -5,6 +5,11 @@ const routes = [
         id: 'default',
     },
     {
+        path: '/counter',
+        name: 'Counter',
+        id: 'counter',
+    },
+    {
         path: '/mortgage-calculator',
         name: 'Mortgage Calculator',
         id: 'mortgageCalculator',

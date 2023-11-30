@@ -1,5 +1,6 @@
 import MortgageCalculatorPrompt from '../mortgageCalculator/MortgageCalculatorPrompt'
 import MortgageCalculator from '../mortgageCalculator/MortgageCalculator'
+import Counter from '../counter/Counter'
 
 const pagesConfig = {
     default: {
@@ -11,6 +12,16 @@ const pagesConfig = {
                 'Nice to see you here :) This is a portfolio of mini features that I have built.',
         },
         main: '',
+    },
+    counter: {
+        name: 'counter',
+        path: '/counter',
+        prompt: {
+            title: 'Counter',
+            description:
+                'Build a simple counter that increments whenever a button is clicked',
+        },
+        main: Counter,
     },
     mortgageCalculator: {
         name: 'mortgageCalculator',
