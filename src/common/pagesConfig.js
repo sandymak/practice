@@ -6,9 +6,9 @@ const pagesConfig = {
         name: 'default',
         path: '/',
         prompt: {
-            title: 'Default Home Page',
-            description: 'hello',
-            requirements: () => <></>,
+            title: 'Welcome! ',
+            description:
+                'Nice to see you here :) This is a portfolio of mini features that I have built.',
         },
         main: '',
     },
