@@ -1,6 +1,7 @@
 import MortgageCalculatorPrompt from '../features/mortgageCalculator/MortgageCalculatorPrompt'
 import MortgageCalculator from '../features/mortgageCalculator/MortgageCalculator'
 import Counter from '../features/counter/Counter'
+import FlightBooker from '../features/flightBooker/FlightBooker'
 
 const pagesConfig = {
     default: {
@@ -24,6 +25,17 @@ const pagesConfig = {
                 'Build a simple counter that increments whenever a button is clicked',
         },
         main: Counter,
+    },
+    flightBooker: {
+        id: 'flight-booker',
+        sidebarLinkName: 'Flight Booker',
+        path: '/flight-booker',
+        prompt: {
+            title: 'Flight Booker',
+            description:
+                'Build a component that books a one-way or return flight for given dates',
+        },
+        main: FlightBooker,
     },
     mortgageCalculator: {
         id: 'mortgageCalculator',
