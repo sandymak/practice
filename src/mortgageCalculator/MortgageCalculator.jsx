@@ -1,30 +1,34 @@
 import { useState } from 'react'
 import './MortgageCalculator.css'
+
 const LOAN_TERM_IN_MONTHS = {
     '30-year-fixed': 30 * 12, //360
     '20-year-fixed': 20 * 12, //240
     '15-year-fixed': 15 * 12, //180
 }
 
+function currencyFormatter() {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    })
+}
+
 export default function MortgageCalculator() {
-    const [loanAmount, setLoanAmount] = useState(100000)
-    const [loanTerm, setLoanTerm] = useState('30-year-fixed')
-    const [interestRate, setInterestRate] = useState(3)
     const [monthlyPayment, setMonthlyPayment] = useState(null)
     const [totalPayment, setTotalPayment] = useState(null)
     const [totalInterestPaid, setTotalInterestPaid] = useState(null)
 
-    const currencyFormatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    })
-
     const handleFormSubmit = (event) => {
         event.preventDefault() // prevent page reload on form submission
 
-        // BELOW USES COMPONENT STATE
-        const loanTermInMonths = LOAN_TERM_IN_MONTHS[loanTerm]
-        const monthlyInterestRate = interestRate / 100 / 12
+        // BELOW LEVERAGES FORMDATA (built in WebAPI)
+        const data = new FormData(event.target)
+        // Get and convert input values;
+        const loanAmount = parseFloat(data.get('loan-amount'))
+        const loanTermInMonths = LOAN_TERM_IN_MONTHS[data.get('loan-term')]
+        const monthlyInterestRate =
+            parseFloat(data.get('interest-rate')) / 100 / 12
         const monthlyPayment =
             (loanAmount *
                 monthlyInterestRate *
@@ -53,8 +57,7 @@ export default function MortgageCalculator() {
                     <input
                         type="number"
                         name="loan-amount"
-                        value={loanAmount}
-                        onChange={(event) => setLoanAmount(event.target.value)}
+                        defaultValue={100000}
                         min={0}
                         required
                     />
@@ -64,9 +67,7 @@ export default function MortgageCalculator() {
                     <select
                         name="loan-term"
                         required
-                        value={loanTerm}
-                        defaultValue={loanTerm}
-                        onChange={(event) => setLoanTerm(event.target.value)}
+                        defaultValue={LOAN_TERM_IN_MONTHS['30-year-fixed']}
                     >
                         <option disabled>-- Please choose an option</option>
                         <option value="15-year-fixed">15-year-fixed</option>
@@ -80,10 +81,7 @@ export default function MortgageCalculator() {
                     <input
                         type="number"
                         name="interest-rate"
-                        value={interestRate}
-                        onChange={(event) =>
-                            setInterestRate(event.target.value)
-                        }
+                        defaultValue={3}
                         min={1}
                         step={0.1}
                         required
@@ -122,19 +120,21 @@ Post Dev Notes & Learnings:
 3. FormData --> this WebAPI can be leveraged to get formdata... I do not need to build component state for these input values... HMMMM... can I use this for select? how does this work????
 
 
-        // BELOW LEVERAGES FORMDATA (built in WebAPI)
-        const data = new FormData(event.target)
-        // Get and convert input values;
-        const formLoanAmount = parseFloat(data.get('loan-amount'))
-        const formLoanTermInMonths = LOAN_TERM_IN_MONTHS[data.get('loan-term')]
-        const formMonthlyInterestRate =
-            parseFloat(data.get('interest-rate')) / 100 / 12
-        const formMonthlyPayment =
-            (formLoanAmount *
-                formMonthlyInterestRate *
-                Math.pow(1 + formMonthlyInterestRate, formLoanTermInMonths)) /
-            (Math.pow(1 + formMonthlyInterestRate, formLoanTermInMonths) - 1)
 
+
+4. Using state:
+    // const [loanAmount, setLoanAmount] = useState(100000)
+    // const [loanTerm, setLoanTerm] = useState('30-year-fixed')
+    // const [interestRate, setInterestRate] = useState(3)
+
+      // BELOW USES COMPONENT STATE
+        const loanTermInMonths = LOAN_TERM_IN_MONTHS[loanTerm]
+        const monthlyInterestRate = interestRate / 100 / 12
+        const monthlyPayment =
+            (loanAmount *
+                monthlyInterestRate *
+                Math.pow(1 + monthlyInterestRate, loanTermInMonths)) /
+            (Math.pow(1 + monthlyInterestRate, loanTermInMonths) - 1)
 
 
 */
