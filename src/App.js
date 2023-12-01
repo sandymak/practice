@@ -1,4 +1,5 @@
 import './App.css'
+import './features/Features.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MainPage from './common/MainPage'
 import routesConfig from './navigation/routesConfig'

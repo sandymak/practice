@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px grey solid;
+    padding: 8px 10px;
+}
+
+.form-input-container {
+    text-align: left;
+    margin: 5px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+input select {
+    width: 100px;
+    margin: 5px;
+}

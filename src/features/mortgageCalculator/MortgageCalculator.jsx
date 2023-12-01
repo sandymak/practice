@@ -7,17 +7,15 @@ const LOAN_TERM_IN_MONTHS = {
     '15-year-fixed': 15 * 12, //180
 }
 
-function currencyFormatter() {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    })
-}
-
 export default function MortgageCalculator() {
     const [monthlyPayment, setMonthlyPayment] = useState(null)
     const [totalPayment, setTotalPayment] = useState(null)
     const [totalInterestPaid, setTotalInterestPaid] = useState(null)
+
+    const currencyFormatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    })
 
     const handleFormSubmit = (event) => {
         event.preventDefault() // prevent page reload on form submission
@@ -50,8 +48,8 @@ export default function MortgageCalculator() {
                 below fields
             </p>
             {/* Adding a handler "onSubmit" on a form allows for calculations when "enter" key is pressed */}
-            <form onSubmit={handleFormSubmit}>
-                <div className="mortgage-calculator-container">
+            <form className="generic" onSubmit={handleFormSubmit}>
+                <div className="form-input-container">
                     <label htmlFor="loan-amount">Loan Amount: </label>
                     <span className="input-dollar left">$</span>
                     <input
@@ -62,7 +60,7 @@ export default function MortgageCalculator() {
                         required
                     />
                 </div>
-                <div className="mortgage-calculator-container">
+                <div className="form-input-container">
                     <label htmlFor="loan-term">Loan Term: </label>
                     <select
                         name="loan-term"
@@ -75,7 +73,7 @@ export default function MortgageCalculator() {
                         <option value="30-year-fixed">30-year-fixed</option>
                     </select>
                 </div>
-                <div className="mortgage-calculator-container">
+                <div className="form-input-container">
                     <label htmlFor="interest-rate">Interest: </label>
 
                     <input
@@ -88,12 +86,12 @@ export default function MortgageCalculator() {
                     />
                     <span className="input-interest-rate right">%</span>
                 </div>
-                <div className="mortgage-calculator-container">
+                <div className="form-input-container">
                     <button type="submit">Submit</button>
                 </div>
             </form>
 
-            <div className="mortgage-calculator-container">
+            <div className="form-input-container">
                 <p>
                     Your Monthly Payment is: <strong>{monthlyPayment}</strong>
                 </p>
