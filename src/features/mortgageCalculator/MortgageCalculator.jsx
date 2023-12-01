@@ -53,6 +53,7 @@ export default function MortgageCalculator() {
                     <label htmlFor="loan-amount">Loan Amount: </label>
                     <span className="input-dollar left">$</span>
                     <input
+                        id="loan-amount"
                         type="number"
                         name="loan-amount"
                         defaultValue={100000}
@@ -63,6 +64,7 @@ export default function MortgageCalculator() {
                 <div className="form-input-container">
                     <label htmlFor="loan-term">Loan Term: </label>
                     <select
+                        id="loan-term"
                         name="loan-term"
                         required
                         defaultValue={LOAN_TERM_IN_MONTHS['30-year-fixed']}
@@ -77,6 +79,7 @@ export default function MortgageCalculator() {
                     <label htmlFor="interest-rate">Interest: </label>
 
                     <input
+                        id="interest-rate"
                         type="number"
                         name="interest-rate"
                         defaultValue={3}
