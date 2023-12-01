@@ -16,14 +16,18 @@ export default function MainPage(props) {
         )
     }
     const { title, description, requirements } = pagesConfig[props.id].prompt
-    const { main } = pagesConfig[props.id]
+    const { main: MainComponent } = pagesConfig[props.id]
 
     return (
         <>
             <header>Header</header>
             <div className="columns">
                 <Sidebar />
-                {main && <main>{main()}</main>}
+                {MainComponent && (
+                    <main>
+                        <MainComponent />
+                    </main>
+                )}
                 <PromptGenerator
                     pageId={props.id}
                     title={title}
