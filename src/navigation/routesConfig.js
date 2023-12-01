@@ -1,5 +1,4 @@
-// TODO: create a dynamic way to transform the pagesConfig into routes. So I don't have to manually add these routes.
-// TODO: group the list into EASY MEDIUM HARD categories
+// TODO: group the list into EASY MEDIUM HARD categories & projects listedn alphabetically/
 
 import pagesConfig from '../common/pagesConfig'
 

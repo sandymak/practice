@@ -9,7 +9,7 @@ export default function Sidebar() {
             <ul style={{ listStyleType: 'none', padding: 0 }}>
                 {routes.map((route, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} style={{ margin: '5px 0px' }}>
                             <Link to={route.path}>{route.name}</Link>
                         </li>
                     )
