@@ -4,17 +4,19 @@ import Counter from '../counter/Counter'
 
 const pagesConfig = {
     default: {
-        name: 'default',
+        id: 'default',
+        sidebarLinkName: 'Home',
         path: '/',
         prompt: {
             title: 'Welcome! ',
             description:
                 'Nice to see you here :) This is a portfolio of mini features that I have built.',
         },
-        main: '',
+        main: null,
     },
     counter: {
-        name: 'counter',
+        id: 'counter',
+        sidebarLinkName: 'Counter',
         path: '/counter',
         prompt: {
             title: 'Counter',
@@ -24,7 +26,8 @@ const pagesConfig = {
         main: Counter,
     },
     mortgageCalculator: {
-        name: 'mortgageCalculator',
+        id: 'mortgageCalculator',
+        sidebarLinkName: 'Mortgage Calculator',
         path: '/mortgage-calculator',
         prompt: {
             title: 'Mortgage Calculator',
