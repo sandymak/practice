@@ -1,6 +1,6 @@
-import MortgageCalculatorPrompt from '../mortgageCalculator/MortgageCalculatorPrompt'
-import MortgageCalculator from '../mortgageCalculator/MortgageCalculator'
-import Counter from '../counter/Counter'
+import MortgageCalculatorPrompt from '../features/mortgageCalculator/MortgageCalculatorPrompt'
+import MortgageCalculator from '../features/mortgageCalculator/MortgageCalculator'
+import Counter from '../features/counter/Counter'
 
 const pagesConfig = {
     default: {
