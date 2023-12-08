@@ -12,7 +12,7 @@ function AccordionSection({ id, title, description }) {
                 setSectionVisibility(isSectionVisible === true ? false : true)
             }
         >
-            <div style={{ fontWeight: 'bold' }}>
+            <div className="accordion-item-title">
                 {title}
                 <span
                     aria-hidden={true}

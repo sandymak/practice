@@ -5,6 +5,14 @@
     padding: 10px;
 }
 
+.accordion-item-title {
+    font-weight: bold;
+}
+
+.accordion-item-title:hover {
+    background-color: sandybrown;
+}
+
 .accordion-container {
     padding: 8px 0;
 }
