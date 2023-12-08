@@ -121,3 +121,11 @@ export default function GenerateTable() {
         </>
     )
 }
+
+/*
+
+Learnings:
+
+1) Array.from () creates a shallow array (similar to new Array().fill())
+2) There is a mathematical way to calculate the expected number in a matrix
+*/
