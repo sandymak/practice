@@ -1,0 +1,28 @@
+.content-container {
+    text-align: left;
+    min-width: 350px;
+    border: 3px slategray solid;
+    padding: 10px;
+}
+
+.accordion-container {
+    padding: 8px 0;
+}
+
+.accordion-container:not(:first-child) {
+    border-top: 1px solid slategrey;
+}
+
+.accordion-icon {
+    border: solid currentcolor;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    height: 8px;
+    pointer-events: none;
+    transform: translateY(-2px) rotate(45deg);
+    width: 8px;
+}
+
+.accordion-icon--rotated {
+    transform: translateY(2px) rotate(-135deg);
+}

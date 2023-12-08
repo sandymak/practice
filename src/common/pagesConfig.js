@@ -2,6 +2,8 @@ import MortgageCalculatorPrompt from '../features/mortgageCalculator/MortgageCal
 import MortgageCalculator from '../features/mortgageCalculator/MortgageCalculator'
 import Counter from '../features/counter/Counter'
 import FlightBooker from '../features/flightBooker/FlightBooker'
+import AccordionPrompt from '../features/accordion/AccordionPrompt'
+import Accordion from '../features/accordion/Accordion'
 
 const pagesConfig = {
     default: {
@@ -15,6 +17,20 @@ const pagesConfig = {
         },
         main: null,
     },
+    // EASY
+    accordion: {
+        id: 'accordion',
+        sidebarLinkName: 'Accordion',
+        path: '/accordion',
+        prompt: {
+            title: 'Accordion',
+            description:
+                'Build an Accordion component that displays a list of vertically stacked sections that each contain a title and content snippet',
+            requirements: AccordionPrompt,
+        },
+        main: Accordion,
+    },
+
     counter: {
         id: 'counter',
         sidebarLinkName: 'Counter',
