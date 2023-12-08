@@ -4,6 +4,7 @@ import Counter from '../features/counter/Counter'
 import FlightBooker from '../features/flightBooker/FlightBooker'
 import AccordionPrompt from '../features/accordion/AccordionPrompt'
 import Accordion from '../features/accordion/Accordion'
+import GenerateTable from '../features/generateTable/GenerateTable'
 
 const pagesConfig = {
     default: {
@@ -52,6 +53,17 @@ const pagesConfig = {
                 'Build a component that books a one-way or return flight for given dates',
         },
         main: FlightBooker,
+    },
+    generateTable: {
+        id: 'generate-table',
+        sidebarLinkName: 'Table of Numbers',
+        path: '/generate-table',
+        prompt: {
+            title: 'Table of Numbers',
+            description:
+                'Generate a table of numbers given the rows and columns.',
+        },
+        main: GenerateTable,
     },
     mortgageCalculator: {
         id: 'mortgageCalculator',
