@@ -15,7 +15,8 @@ export default function MainPage(props) {
             </Fragment>
         )
     }
-    const { title, description, requirements } = pagesConfig[props.id].prompt
+    const { title, description, requirements, learnings } =
+        pagesConfig[props.id].prompt
     const { main: MainComponent } = pagesConfig[props.id]
 
     return (
@@ -33,6 +34,7 @@ export default function MainPage(props) {
                     title={title}
                     description={description}
                     requirements={requirements}
+                    learnings={learnings}
                 />
             </div>
             <footer>Footer</footer>

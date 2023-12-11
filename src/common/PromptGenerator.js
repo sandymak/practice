@@ -5,6 +5,7 @@ export default function PromptGenerator({ pageId }) {
         title,
         description,
         requirements: RequirementsComponent,
+        learnings: LearningsComponent,
     } = pagesConfig[pageId].prompt
 
     return (
@@ -13,6 +14,13 @@ export default function PromptGenerator({ pageId }) {
             <p>{description || 'Default description'}</p>
             {RequirementsComponent && <h2>Requirements:</h2>}
             {RequirementsComponent && <RequirementsComponent />}
+            {LearningsComponent && (
+                <>
+                    <hr />
+                    <h2>Learnings: </h2>
+                </>
+            )}
+            {LearningsComponent && <LearningsComponent />}
         </aside>
     )
 }
