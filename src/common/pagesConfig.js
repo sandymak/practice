@@ -5,6 +5,8 @@ import FlightBooker from '../features/flightBooker/FlightBooker'
 import AccordionPrompt from '../features/accordion/AccordionPrompt'
 import Accordion from '../features/accordion/Accordion'
 import GenerateTable from '../features/generateTable/GenerateTable'
+import ProgressBarDisplay from '../features/progressBar/ProgressBar'
+import ProgressBarLearnings from '../features/progressBar/ProgressBarLearnings'
 
 const pagesConfig = {
     default: {
@@ -76,6 +78,18 @@ const pagesConfig = {
             requirements: MortgageCalculatorPrompt,
         },
         main: MortgageCalculator,
+    },
+    progressBar: {
+        id: 'progressBar',
+        sidebarLinkName: 'Progress Bar',
+        path: '/progress-bar',
+        prompt: {
+            title: 'Progress Bar',
+            description:
+                'Implement a progress bar component which shoes the completion progress by filling the bar proportionately to the progress (a number between 0-100 inclusive).',
+            learnings: ProgressBarLearnings,
+        },
+        main: ProgressBarDisplay,
     },
 }
 
