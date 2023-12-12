@@ -5,8 +5,13 @@ import FlightBooker from '../features/flightBooker/FlightBooker'
 import AccordionPrompt from '../features/accordion/AccordionPrompt'
 import Accordion from '../features/accordion/Accordion'
 import GenerateTable from '../features/generateTable/GenerateTable'
-import ProgressBarDisplay from '../features/progressBar/ProgressBar'
+import ProgressBarStaticList from '../features/progressBar/ProgressBarStaticList'
 import ProgressBarLearnings from '../features/progressBar/ProgressBarLearnings'
+import ProgressBarAnimationsLearnings from '../features/progressBar/ProgressBarAnimationsLearnings'
+import {
+    ProgressBarAddWithJS,
+    ProgressBarAddWithCSS,
+} from '../features/progressBar/ProgressBarAdd'
 
 const pagesConfig = {
     default: {
@@ -79,17 +84,40 @@ const pagesConfig = {
         },
         main: MortgageCalculator,
     },
-    progressBar: {
-        id: 'progressBar',
-        sidebarLinkName: 'Progress Bar',
-        path: '/progress-bar',
+    progressBarStaticList: {
+        id: 'progressBarStaticList',
+        sidebarLinkName: 'Progress Bar List',
+        path: '/progress-bar-static-list',
         prompt: {
-            title: 'Progress Bar',
+            title: 'Progress Bar List',
             description:
                 'Implement a progress bar component which shoes the completion progress by filling the bar proportionately to the progress (a number between 0-100 inclusive).',
             learnings: ProgressBarLearnings,
         },
-        main: ProgressBarDisplay,
+        main: ProgressBarStaticList,
+    },
+    progressBarAddWithJS: {
+        id: 'progressBarAddJS',
+        sidebarLinkName: 'Progress Bar Add (JS)',
+        path: '/progress-bar-add-with-js',
+        prompt: {
+            title: 'Progress Bar Add With JS',
+            description:
+                'Build an app where clicking the "Add" button adds progress bars to the page. The progress bars fill up gradually as soon as they are shown',
+        },
+        main: ProgressBarAddWithJS,
+    },
+    progressBarAddWithCSS: {
+        id: 'progressBarAddCSS',
+        sidebarLinkName: 'Progress Bar Add (CSS)',
+        path: '/progress-bar-add-with-css',
+        prompt: {
+            title: 'Progress Bar Add With CSS',
+            description:
+                'Build an app where clicking the "Add" button adds progress bars to the page. The progress bars fill up gradually as soon as they are shown',
+            learnings: ProgressBarAnimationsLearnings,
+        },
+        main: ProgressBarAddWithCSS,
     },
 }
 

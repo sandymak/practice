@@ -1,5 +1,5 @@
 import './ProgressBar.css'
-export default function ProgressBarDisplay() {
+export default function ProgressBarStaticList() {
     return (
         <div
             className="wrapper"
@@ -20,7 +20,7 @@ export default function ProgressBarDisplay() {
 const MIN = 0
 const MAX = 100
 
-function ProgressBar({ value }) {
+export function ProgressBar({ value }) {
     // Handle invalid values and convert them to be within [0, 100];
     const clampedValue = Math.min(Math.max(value, MIN), MAX)
 
