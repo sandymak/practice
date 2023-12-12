@@ -12,6 +12,7 @@ import {
     ProgressBarAddWithJS,
     ProgressBarAddWithCSS,
 } from '../features/progressBar/ProgressBarAdd'
+import TemperatureConverter from '../features/temperatureConverter/TemperatureConverter'
 
 const pagesConfig = {
     default: {
@@ -118,6 +119,17 @@ const pagesConfig = {
             learnings: ProgressBarAnimationsLearnings,
         },
         main: ProgressBarAddWithCSS,
+    },
+    temperatureConverter: {
+        id: 'temperatureConverter',
+        sidebarLinkName: 'Temperature Converter',
+        path: '/temperature-converter',
+        prompt: {
+            title: 'Temperature Converter',
+            description:
+                'Build a simple temperature converter widget that contains two text inputs temperatures in Celsius and Fahrenheit respectively, allowing for conversion between the temperature scales.',
+        },
+        main: TemperatureConverter,
     },
 }
 

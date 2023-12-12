@@ -74,7 +74,7 @@ export function ProgressBarAddWithJS() {
 
     return (
         <div className="wrapper">
-            <div className="input-container">
+            <div className="container--vertical">
                 <button onClick={handleAddButtonClick}>Add</button>
             </div>
             {progressBars.map((progressBar) => (

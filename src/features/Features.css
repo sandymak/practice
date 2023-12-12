@@ -24,3 +24,18 @@ input select {
     border: 3px slategray solid;
     padding: 10px;
 }
+
+.wrapper--horizontal {
+    display: flex;
+    column-gap: 10px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container--vertical {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
