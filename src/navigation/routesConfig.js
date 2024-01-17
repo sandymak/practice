@@ -1,5 +1,3 @@
-// TODO: group the list into EASY MEDIUM HARD categories & projects listedn alphabetically/
-
 import pagesConfig from '../common/pagesConfig'
 
 function RoutesGenerator() {
@@ -16,6 +14,13 @@ function RoutesGenerator() {
             routes.push(route)
         }
     }
+    routes.sort((a, b) => {
+        const routeA = a.name.toUpperCase()
+        const routeB = b.name.toUpperCase()
+        if (routeA < routeB) return -1
+        if (routeA > routeB) return 1
+        return 0
+    })
     return routes
 }
 

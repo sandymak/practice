@@ -41,7 +41,6 @@ const pagesConfig = {
         main: Accordion,
         tags: [TAGS.REACT_EASY],
     },
-
     counter: {
         id: 'counter',
         sidebarLinkName: 'Counter',
