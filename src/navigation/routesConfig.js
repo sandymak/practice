@@ -6,12 +6,15 @@ function RoutesGenerator() {
     const routes = []
     const pages = Object.keys(pagesConfig)
     for (const pageId of pages) {
-        const route = {
-            path: pagesConfig[pageId].path,
-            name: pagesConfig[pageId].sidebarLinkName,
-            id: pageId,
+        if (pagesConfig[pageId].sidebarLinkName) {
+            const route = {
+                path: pagesConfig[pageId].path,
+                name: pagesConfig[pageId].sidebarLinkName,
+                id: pageId,
+                tags: pagesConfig[pageId].tags,
+            }
+            routes.push(route)
         }
-        routes.push(route)
     }
     return routes
 }

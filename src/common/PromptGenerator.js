@@ -10,8 +10,11 @@ export default function PromptGenerator({ pageId }) {
 
     return (
         <aside>
-            <h1>{title || 'Default Title'}</h1>
-            <p>{description || 'Default description'}</p>
+            <h1>{title || 'Welcome!'}</h1>
+            <p>
+                {description ||
+                    'Nice to see you here :) This is a portfolio of mini features that I have built.'}
+            </p>
             {RequirementsComponent && <h2>Requirements:</h2>}
             {RequirementsComponent && <RequirementsComponent />}
             {LearningsComponent && (

@@ -14,16 +14,17 @@ import {
 } from '../features/progressBar/ProgressBarAdd'
 import TemperatureConverter from '../features/temperatureConverter/TemperatureConverter'
 
+export const TAGS = {
+    ALL: 'ALL',
+    REACT_EASY: 'REACT_EASY',
+    REACT_MEDIUM: 'REACT_MEDIUM',
+    REACT_HARD: 'REACT_HARD',
+}
+
 const pagesConfig = {
     default: {
         id: 'default',
-        sidebarLinkName: 'Home',
-        path: '/',
-        prompt: {
-            title: 'Welcome! ',
-            description:
-                'Nice to see you here :) This is a portfolio of mini features that I have built.',
-        },
+        prompt: {},
         main: null,
     },
     // EASY
@@ -38,6 +39,7 @@ const pagesConfig = {
             requirements: AccordionPrompt,
         },
         main: Accordion,
+        tags: [TAGS.REACT_EASY],
     },
 
     counter: {
@@ -50,6 +52,7 @@ const pagesConfig = {
                 'Build a simple counter that increments whenever a button is clicked',
         },
         main: Counter,
+        tags: [TAGS.REACT_EASY],
     },
     flightBooker: {
         id: 'flight-booker',
@@ -61,6 +64,7 @@ const pagesConfig = {
                 'Build a component that books a one-way or return flight for given dates',
         },
         main: FlightBooker,
+        tags: [TAGS.REACT_EASY],
     },
     generateTable: {
         id: 'generate-table',
@@ -72,6 +76,7 @@ const pagesConfig = {
                 'Generate a table of numbers given the rows and columns.',
         },
         main: GenerateTable,
+        tags: [TAGS.REACT_EASY],
     },
     mortgageCalculator: {
         id: 'mortgageCalculator',
@@ -84,6 +89,7 @@ const pagesConfig = {
             requirements: MortgageCalculatorPrompt,
         },
         main: MortgageCalculator,
+        tags: [TAGS.REACT_EASY],
     },
     progressBarStaticList: {
         id: 'progressBarStaticList',
@@ -96,6 +102,7 @@ const pagesConfig = {
             learnings: ProgressBarLearnings,
         },
         main: ProgressBarStaticList,
+        tags: [TAGS.REACT_EASY],
     },
     progressBarAddWithJS: {
         id: 'progressBarAddJS',
@@ -107,6 +114,7 @@ const pagesConfig = {
                 'Build an app where clicking the "Add" button adds progress bars to the page. The progress bars fill up gradually as soon as they are shown',
         },
         main: ProgressBarAddWithJS,
+        tags: [TAGS.REACT_EASY],
     },
     progressBarAddWithCSS: {
         id: 'progressBarAddCSS',
@@ -119,6 +127,7 @@ const pagesConfig = {
             learnings: ProgressBarAnimationsLearnings,
         },
         main: ProgressBarAddWithCSS,
+        tags: [TAGS.REACT_EASY],
     },
     temperatureConverter: {
         id: 'temperatureConverter',
@@ -130,7 +139,27 @@ const pagesConfig = {
                 'Build a simple temperature converter widget that contains two text inputs temperatures in Celsius and Fahrenheit respectively, allowing for conversion between the temperature scales.',
         },
         main: TemperatureConverter,
+        tags: [TAGS.REACT_EASY, TAGS.REACT_MEDIUM, TAGS.REACT_HARD],
     },
 }
+
+export const HEADER_TABS = [
+    {
+        name: 'View All',
+        id: TAGS.ALL,
+    },
+    {
+        name: 'React Easy Problems',
+        id: TAGS.REACT_EASY,
+    },
+    {
+        name: 'React Medium Problems',
+        id: TAGS.REACT_MEDIUM,
+    },
+    {
+        name: 'React Hard Problems',
+        id: TAGS.REACT_HARD,
+    },
+]
 
 export default pagesConfig
