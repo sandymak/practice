@@ -13,6 +13,8 @@ import {
     ProgressBarAddWithCSS,
 } from '../features/progressBar/ProgressBarAdd'
 import TemperatureConverter from '../features/temperatureConverter/TemperatureConverter'
+import Tabs from '../features/tabs/Tabs.jsx'
+import TabsPrompt from '../features/tabs/TabsPrompt'
 
 export const TAGS = {
     ALL: 'ALL',
@@ -138,7 +140,20 @@ const pagesConfig = {
                 'Build a simple temperature converter widget that contains two text inputs temperatures in Celsius and Fahrenheit respectively, allowing for conversion between the temperature scales.',
         },
         main: TemperatureConverter,
-        tags: [TAGS.REACT_EASY, TAGS.REACT_MEDIUM, TAGS.REACT_HARD],
+        tags: [TAGS.REACT_EASY],
+    },
+    tabs: {
+        id: 'tabs',
+        sidebarLinkName: 'Tabs',
+        path: '/tabs',
+        prompt: {
+            title: 'Tabs',
+            description:
+                'Build a tabs component that displays one panel of content at a time depending on the active tab element. Some HTML is provided for you as example contents.',
+            requirements: TabsPrompt,
+        },
+        main: Tabs,
+        tags: [TAGS.REACT_MEDIUM],
     },
 }
 
@@ -152,7 +167,7 @@ export const HEADER_TABS = [
         id: TAGS.REACT_EASY,
     },
     {
-        name: 'React Medium Problems',
+        name: 'React Mid Problems',
         id: TAGS.REACT_MEDIUM,
     },
     {

@@ -21,8 +21,11 @@ input select {
 
 .wrapper {
     min-width: 350px;
-    border: 3px slategray solid;
     padding: 10px;
+}
+
+.border {
+    border: 3px slategray solid;
 }
 
 .wrapper--horizontal {
@@ -30,6 +33,13 @@ input select {
     column-gap: 10px;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.wrapper--vertical {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
 }
 
 .container--vertical {

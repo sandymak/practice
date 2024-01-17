@@ -3,7 +3,6 @@ import './Accordion.css'
 
 function AccordionSection({ id, title, description }) {
     const [isSectionVisible, setSectionVisibility] = useState(false)
-    console.log('title', title)
 
     return (
         <div
