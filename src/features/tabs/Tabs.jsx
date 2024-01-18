@@ -1,4 +1,6 @@
+import './Tabs.css'
 import { useState } from 'react'
+
 export default function Tabs() {
     const TABS = [
         {
@@ -22,30 +24,40 @@ export default function Tabs() {
                         World Wide Web, alongside HTML and CSS`,
         },
     ]
-    const [currentTab, setCurrentTab] = useState(TABS[0])
+    const [currentTabId, setCurrentTabId] = useState(TABS[0].id)
     return (
-        <div className="wrapper border">
-            <div
-                className="wrapper--horizontal"
-                style={{ justifyContent: 'flex-start' }}
-            >
-                {TABS.map((tab) => (
-                    <button
-                        key={tab.id}
-                        onClick={() => setCurrentTab(tab)}
-                        id={tab.id}
-                        style={{
-                            backgroundColor: `${
-                                currentTab.id === tab.id ? 'blue' : '#EFEFEF'
-                            }`,
-                        }}
-                    >
-                        {tab.title}
-                    </button>
-                ))}
+        <div className="tabs">
+            <div className="tabs-list">
+                {TABS.map(({ id, title }) => {
+                    const isActiveValue = currentTabId === id
+                    return (
+                        <button
+                            key={id}
+                            type="button"
+                            onClick={() => setCurrentTabId(id)}
+                            id={id}
+                            className={[
+                                'tabs-list-item',
+                                isActiveValue && 'tabs-list-item--active',
+                            ]
+                                .filter(Boolean)
+                                .join(' ')}
+                        >
+                            {title}
+                        </button>
+                    )
+                })}
             </div>
-            <div className="wrapper" style={{}}>
-                <p style={{ textAlign: 'left' }}>{currentTab.description}</p>
+            <div className="wrapper">
+                {TABS.map(({ id, description }) => (
+                    <div
+                        key={id}
+                        hidden={id !== currentTabId}
+                        style={{ textAlign: 'left' }}
+                    >
+                        {description}
+                    </div>
+                ))}
             </div>
         </div>
     )
