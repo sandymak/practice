@@ -15,6 +15,9 @@ import {
 import TemperatureConverter from '../features/temperatureConverter/TemperatureConverter'
 import Tabs from '../features/tabs/Tabs.jsx'
 import TabsPrompt from '../features/tabs/TabsPrompt'
+import AnalogClock from '../features/analogClock/AnalogClock'
+import TransferList from '../features/transferList/TransferList'
+import TransferListPrompt from '../features/transferList/TransferListPrompt'
 
 export const TAGS = {
     ALL: 'ALL',
@@ -142,6 +145,20 @@ const pagesConfig = {
         main: TemperatureConverter,
         tags: [TAGS.REACT_EASY],
     },
+
+    // MEDIUM
+    analogClock: {
+        id: 'analogClock',
+        sidebarLinkName: 'Analog Clock',
+        path: '/analog-clock',
+        prompt: {
+            title: 'Analog Clock',
+            description:
+                'Create a widget that renders the current time within an analog clock display, where the clock hands move and update like a real clock.',
+        },
+        main: AnalogClock,
+        tags: [TAGS.REACT_MEDIUM],
+    },
     tabs: {
         id: 'tabs',
         sidebarLinkName: 'Tabs',
@@ -153,6 +170,19 @@ const pagesConfig = {
             requirements: TabsPrompt,
         },
         main: Tabs,
+        tags: [TAGS.REACT_MEDIUM],
+    },
+    transferList: {
+        id: 'transferList',
+        sidebarLinkName: 'Transfer List',
+        path: '/transfer-list',
+        prompt: {
+            title: 'Transfer List',
+            description:
+                'Build a component that allows transferring of items between two lists.',
+            requirements: TransferListPrompt,
+        },
+        main: TransferList,
         tags: [TAGS.REACT_MEDIUM],
     },
 }
