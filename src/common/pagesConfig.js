@@ -18,6 +18,8 @@ import TabsPrompt from '../features/tabs/TabsPrompt'
 import AnalogClock from '../features/analogClock/AnalogClock'
 import TransferList from '../features/transferList/TransferList'
 import TransferListPrompt from '../features/transferList/TransferListPrompt'
+import JobBoard from '../features/jobBoard/JobBoard.jsx'
+import JobBoardPrompt from '../features/jobBoard/JobBoardPrompt.jsx'
 
 export const TAGS = {
     ALL: 'ALL',
@@ -157,6 +159,19 @@ const pagesConfig = {
                 'Create a widget that renders the current time within an analog clock display, where the clock hands move and update like a real clock.',
         },
         main: AnalogClock,
+        tags: [TAGS.REACT_MEDIUM],
+    },
+    jobBoard: {
+        id: 'jobBoard',
+        sidebarLinkName: 'Job Board',
+        path: '/job-board',
+        prompt: {
+            title: 'Job Board',
+            description:
+                'Build a job board that displays the latest job postings fetched from the Hacker News API, with each posting displaying the job title, poster, and date posted.',
+            requirements: JobBoardPrompt,
+        },
+        main: JobBoard,
         tags: [TAGS.REACT_MEDIUM],
     },
     tabs: {
