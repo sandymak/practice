@@ -20,6 +20,7 @@ import TransferList from '../features/transferList/TransferList'
 import TransferListPrompt from '../features/transferList/TransferListPrompt'
 import JobBoard from '../features/jobBoard/JobBoard.jsx'
 import JobBoardPrompt from '../features/jobBoard/JobBoardPrompt.jsx'
+import Pagination from '../features/pagination/Pagination.jsx'
 
 export const TAGS = {
     ALL: 'ALL',
@@ -172,6 +173,18 @@ const pagesConfig = {
             requirements: JobBoardPrompt,
         },
         main: JobBoard,
+        tags: [TAGS.REACT_MEDIUM],
+    },
+    pagination: {
+        id: 'pagination',
+        sidebarLinkName: 'Pagination',
+        path: '/pagination',
+        prompt: {
+            title: 'Pagination',
+            description:
+                'Build views with 3 different pagination options. 1) Load More button 2) Previous/Next buttons 3) Clickable Pages Buttons',
+        },
+        main: Pagination,
         tags: [TAGS.REACT_MEDIUM],
     },
     tabs: {

@@ -1,0 +1,74 @@
+.job-board-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 10px;
+    min-height: 300px;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    background-color: #b59dbb;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.job-detail-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.job-title {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+.job-detail {
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: regular;
+    color: #5c4e63;
+}
+
+.loading {
+    color: #4d4d4d;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.load-more-button {
+    background-color: #ff6600;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 8px 12px;
+}
+
+.load-more-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.load-more-button:hover {
+    background-color: #e65c00;
+}
+
+.load-more-button:disabled {
+    background-color: darkgray;
+}
+
+.load-more-button--active {
+    background-color: #581845;
+}
