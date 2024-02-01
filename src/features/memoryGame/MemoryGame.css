@@ -1,0 +1,42 @@
+.memory-game-board-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.memory-game-board {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    border: solid 2px #000;
+    border-radius: 30px;
+    min-width: 280px;
+    min-height: 400px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.memory-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    cursor: pointer;
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.memory-card--selected {
+    border: solid 2px #000;
+    background: transparent;
+}
+
+.memory-card--selected-matched {
+    border: solid 3px green;
+    background: transparent;
+}

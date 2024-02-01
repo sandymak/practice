@@ -21,6 +21,8 @@ import TransferListPrompt from '../features/transferList/TransferListPrompt'
 import JobBoard from '../features/jobBoard/JobBoard.jsx'
 import JobBoardPrompt from '../features/jobBoard/JobBoardPrompt.jsx'
 import Pagination from '../features/pagination/Pagination.jsx'
+import MemoryGame from '../features/memoryGame/MemoryGame.jsx'
+import MemoryGamePrompt from '../features/memoryGame/MemoryGamePrompt.jsx'
 
 export const TAGS = {
     ALL: 'ALL',
@@ -173,6 +175,19 @@ const pagesConfig = {
             requirements: JobBoardPrompt,
         },
         main: JobBoard,
+        tags: [TAGS.REACT_MEDIUM],
+    },
+    memoryGame: {
+        id: 'memoryGame',
+        sidebarLinkName: 'Memory Game',
+        path: '/memory-game',
+        prompt: {
+            title: 'Memory Game',
+            description:
+                'Build a memory game where the player needs to match pairs of cards.',
+            requirements: MemoryGamePrompt,
+        },
+        main: MemoryGame,
         tags: [TAGS.REACT_MEDIUM],
     },
     pagination: {
